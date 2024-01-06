@@ -1,0 +1,70 @@
+<section id="header" class="container bg-secondary h-100 position-relative">
+    <div id="container" class="scroll-container bg-secondary" #container>
+        <div id="hat"></div>
+        <div class="panel" id="title">
+            <div>
+                <p class="text-start"><label class="px-5 py-2 bg-dark text-secondary rounded-pill me-2">WE MERGE</label> <span class="fw-normal">YOUR BRAND + OUR ARTISTIC MAGIC + OUR TECH BRILLIANCE </span></p>
+                <h5 class="main-title text-light" style="line-height: 0.75;"><b>AND</b><span class="ps-5"><b>VOILA</b></span></h5>
+                <p class="text-start pt-5"><span class="fw-normal">WATCH THE MAGIC UNFOLD <b>BEFORE YOUR EYES</b></span></p>
+            </div>
+        </div>
+        <div id="video-trigger"></div>
+    </div>
+    
+    <div id="scene" class="h-100 bg-secondary z-2 position-fixed" style="opacity: 0;">
+        <div id="video" class="w-100">
+            <video preload="auto" controls #video muted="true">
+                <source src="assets/videos/video-hd.mp4" type="video/mp4" *ngIf="!isMobile">
+                <source src="assets/videos/video-v.mp4" type="video/mp4" *ngIf="isMobile">
+            </video>
+        </div>
+    </div>
+    
+    <div id="animation" class="position-fixed top-0 vw-100 vh-100 z-2">
+        <div id="hat" class="position-absolute bottom-0" #hat></div>
+        <div id="brain" class="position-absolute bottom-0" style="opacity: 0;" #brain></div>
+        <div id="smoke" class="position-absolute bottom-0" style="opacity: 0;" #smoke></div>
+        <div id="smoke-full" class="position-absolute bottom-0" style="opacity: 0; " #smokeFull></div>
+    </div>
+</section>
+
+<section class="w-100" id="page">
+    <app-about-us></app-about-us>
+
+    <app-our-services></app-our-services>
+
+    <!--POR CAMBIAR A UN COMPONENTE #SORRY-->
+    <section id="our-magic" class="w-100">
+        <div class="d-flex justify-content-center align-items-center text-center">
+            <span class="px-5 py-2 rounded-pill bg-dark text-light fs-5"><b>OUR MAGIC</b></span>
+        </div>
+        <div class="mt-5">&nbsp;</div>
+        <div class="d-flex flex-column justify-content-center align-items-center text-center position-relative">
+            <div id="slider" class="w-100 position-relative">
+                <div id="slider-inner" class="w-100 h-100 position-relative">
+                    <ng-container *ngFor="let project of projects; let i = index">
+                        <div [id]="'prj'+i" class="slider-item w-100 vh-100 position-relative overflow-hidden">
+                            <a href="#" class="d-block position-relative w-100 h-100">
+                                <div id="image" class="d-block position-relative w-100 h-100 image overflow-hidden bg-dark">
+                                    <img class="w-100 h-100 position-absolute top-0 start-0" [src]="project.imageLink" [alt]="project.name">
+                                </div>
+                                <div id="title-slider" class="title-slider position-absolute top-50 start-0 w-100 mx-auto d-flex align-items-center justify-content-center text-center ">
+                                    <div class="d-block text-center position-relative overflow-initial">
+                                        <h1 class="text-light fs-1 text-shadow"><b>{{project.name}}</b></h1>
+                                        <h2 class="text-light fs-5 text-shadow"><b>{{project.tag}}</b></h2>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5">&nbsp;</div>
+    </section>
+    
+    <app-our-magic></app-our-magic>
+</section>
+<div class="position-fixed bottom-0 start-50 translate-middle-x mouse-indication" [ngClass]="{'opacity-0': scrolled, 'opacity-100': !scrolled}">
+    <img src="assets/images/scroll-down-mouse.gif" width="50px">
+</div>

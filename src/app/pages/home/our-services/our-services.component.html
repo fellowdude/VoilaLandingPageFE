@@ -1,0 +1,32 @@
+<section id="services" class="d-flex flex-column justify-content-center align-items-center text-center position-relative">
+    <span class="px-5 py-2 rounded-pill bg-dark text-light fs-5"><b>SERVICES</b></span>
+    <div class="mt-5">&nbsp;</div>
+    <div class="d-flex flex-column w-100">
+        <ng-container *ngFor="let service of services">
+            <div class="w-100 mask position-relative d-flex justify-content-center align-items-center" style="height: 5.3em;">
+                <div class="d-flex position-absolute bottom-0 start-50 w-100 translate-middle-x deep bg-secondary h-100">
+                    <div class="d-flex container">
+                        <div class="col-12 col-xxl-4 position-relative">
+                            <h2 class="text-start is-masking position-absolute bottom-0 start-0 z-2 text-light my-0 title ps-3 lh-07 text-uppercase ff-2" style="--size: 0%;"><b>{{service.name}}</b></h2>
+                            <h2 class="text-start position-absolute bottom-0 start-0 z-1 opacity-25 my-0 title ps-3 lh-07 text-uppercase ff-2"><b>{{service.name}}</b></h2>
+                        </div>
+                        <div class="col-12 col-xxl-8 text-secondary text-end d-none d-xxl-inline">
+                            <p class="pt-1 pb-1 pt-xxl-3 pb-xxl-4 my-0 detail px-1 px-xxl-3" [innerHTML]="service.detail"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 masking d-flex z-2 position-absolute bottom-0 start-50 translate-middle-x bg-dark h-100">
+                    <div class="d-flex container">
+                        <div class="col-12 col-xxl-4 position-relative">
+                            <h2 class="text-start text-secondary position-absolute bottom-0 start-0 my-0 title ps-3 lh-07 text-uppercase ff-2"><b>{{service.name}}</b></h2>
+                        </div>
+                        <div class="col-12 col-xxl-8 text-light text-end d-none d-xxl-inline">
+                            <p class="pt-1 pb-1 pt-xxl-3 pb-xxl-4 my-0 detail px-1 px-xxl-3" [innerHTML]="service.detail"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="mb-5">&nbsp;</div>
+</section>

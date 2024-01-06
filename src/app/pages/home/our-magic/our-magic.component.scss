@@ -1,0 +1,50 @@
+.image{
+    transform-origin: 50% 50%;
+    will-change: transform;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.rotation{
+    animation: rotate 30s infinite linear;
+}
+
+#whatsapp {
+    transform: translateY(-30%);
+    .icon{
+        font-size: 80px
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: scale(0.5) rotate(0deg);
+    }
+    100% {
+        transform: scale(0.5) rotate(360deg);
+    }
+}
+
+@media screen and (min-width: 1480px) {
+    #whatsapp {
+        transform: translateY(-10%);
+        .icon{
+            font-size: 120px
+        }
+    }
+
+    .title{
+        font-size: 60px;
+    }
+    
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

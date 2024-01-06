@@ -1,0 +1,8 @@
+<ul class="list-group w-fit position-fixed top-50 start-0 translate-middle-y bg-primary border-0 rounded-0 z-3">
+    <ng-container *ngFor="let item of socials; let i = index">
+        <li class="list-group-item bg-primary border-0 py-0">
+            <a class="text-light fs-3 d-flex align-items-center text-decoration-none" style="width: 28px; height: 50px;" [href]="item.link" target="_blank" [title]="item.name"><i class='bx' [ngClass]="item.icon"></i></a>
+            <hr class="my-0 border-white opacity-100" *ngIf="i !== socials.length -1"/>
+        </li>
+    </ng-container>
+</ul>

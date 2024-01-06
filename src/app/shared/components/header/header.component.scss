@@ -1,0 +1,25 @@
+#logo {
+    max-width: 125px;
+}
+
+nav{
+    transition: all 1s ease;
+}
+
+.top--100{
+    top: -100px;
+}
+
+.mh-0 {
+    max-height: 0px;
+}
+
+.mhc-100{
+    max-height: 40vh;
+}
+
+@media screen and (max-width: 1480) {
+    #logo {
+        max-width: 175px;
+    }
+}

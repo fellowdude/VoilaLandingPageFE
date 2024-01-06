@@ -1,0 +1,9 @@
+.text{
+    text-align: center;
+}
+
+@media screen and (min-width: 1480px) {
+    .text{
+        text-align: left;
+    }
+}

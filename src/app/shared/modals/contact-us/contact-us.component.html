@@ -1,0 +1,49 @@
+<div class="d-block modal fade show top-0 left-0 vw-xxl-100 vh-xxl-100 bg-dark bg-opacity-75" *ngIf="display$ | async as display">
+    <div class="position-absolute top-50 start-50 translate-middle ">
+        <div id="container" class="w-100 h-100 bg-black bg-opacity-75 rounded-5" [ngClass]="{'flip-vertical-right': !flip, 'flip-vertical-left': flip}" style="transform-style: preserve-3d; min-height: 800px;">
+            <div class="w-100 h-100 text-light position-absolute backface w-100 text-center p-3 back" [ngClass]="{'back': !flip}">
+                <button type="button" class="btn-close bg-primary rounded-circle position-absolute end-0 top-0 p-2 m-4" aria-label="Close" (click)="close()"></button>
+                <div class="py-5"></div>
+                <div id="trigger" class="rounded-pill border border-secondary overflow-hidden col-12 col-xxl-8 mx-auto">
+                    <button class="btn btn-secondary col-6 rounded-pill"><b>CONTACT</b> US</button>
+                    <button class="btn col-6 rounded-pill text-light" (click)="flipCard()"><b>BOOK</b> A CALL</button>
+                </div>
+                <div class="pt-5 px-2 px-xxl-5" *ngIf="!flip">
+                    <form [formGroup]="contactForm">
+                        <div class="form-floating mb-5 border-bottom">
+                            <input type="text" class="form-control bg-transparent border-0 text-white" id="name" placeholder="Name" formControlName="name">
+                            <label for="name" class="bg-transparent text-light border-0">YOUR <b>NAME</b></label>
+                        </div>
+                        <div class="form-floating mb-5 border-bottom">
+                            <input type="text" class="form-control bg-transparent border-0 text-white" id="email" placeholder="Email" formControlName="email">
+                            <label for="email" class="bg-transparent text-light border-0">YOUR <b>EMAIL</b></label>
+                        </div>
+                        <div class="form-floating mb-5 border-bottom">
+                            <textarea class="form-control bg-transparent border-0 text-white" id="message" placeholder="Message" style="height: 150px; resize: none;" formControlName="message"></textarea>
+                            <label for="message" class="bg-transparent text-light border-0">YOUR <b>MESSAGE</b></label>
+                        </div>
+                        <div class="mt-5">
+                            <button class="btn btn-primary rounded-pill py-2 px-5 text-black" [disabled]="contactForm.invalid || loading" (click)="send()">SEND <b>MESSAGE</b></button>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-light my-0" *ngIf="sentMessage">
+                                Message was succesfully sent.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="w-100 h-100 text-light position-absolute backface w-100 text-center p-3" [ngClass]="{'back': flip}">
+                <button type="button" class="btn-close bg-primary rounded-circle position-absolute end-0 top-0 p-2 m-4" aria-label="Close" (click)="close()"></button>
+                <div class="py-5"></div>
+                <div id="trigger" class="rounded-pill border border-secondary overflow-hidden col-12 col-xxl-8 mx-auto">
+                    <button class="btn col-6 rounded-pill text-light" (click)="flipCard()"><b>CONTACT</b> US</button>
+                    <button class="btn btn-secondary col-6 rounded-pill text-black"><b>BOOK</b> A CALL</button>
+                </div>
+                <div id="calendar" class="px-2 px-xxl-3">
+                    <app-calendar *ngIf="flip"></app-calendar>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,56 @@
+$primary: #6320EE;
+$secondary: #8075FF;
+$dark: #211A1D;
+$light: #F8F0FB;
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'assets/fonts/stylesheet.scss';
+@import 'assets/styles/animations.scss';
+/* You can add global styles to this file, and also import other style files */
+html {
+    overflow-y: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-y: visible;
+    position: relative;
+    height: unset;
+    font-family: 'Termina Test', sans-serif;
+}
+
+*{
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: rgba($color: #F8F0FB, $alpha: 0.2);
+        border-radius: 15px;
+    }
+    &::-webkit-scrollbar-button{
+        display: none;
+    }
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.ff-2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.w-fit{
+    width: fit-content;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
